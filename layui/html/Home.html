@@ -3,70 +3,48 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>综合政务服务网</title>
+		<title>办事页面</title>
 		<link rel="stylesheet" href="../css/layui.css" media="all">
-		
+		<link rel="import" href="index.html" id="index">
+<style type="text/css">
+	img{
+		height: 100%;
+		width: 100%;
+	}
+</style>
 	</head>
 
 	<body>
 		<!--//导航栏-->
-		<ul class="layui-nav layui-bg-blue">
-			<li class="layui-nav-item">
-				<a href="">网站首页</a>
-			</li>
-			<li class="layui-nav-item layui-this">
-				<a href="">新闻动态</a>
-			</li>
-			<li class="layui-nav-item">
-				<a href="">城市服务</a>
-				<dl class="layui-nav-child">
-					<dd>
-						<a href="">公共自行车查询</a>
-					</dd>
-					<dd>
-						<a href="">五险一金查询</a>
-					</dd>
-					<dd>
-						<a href="">车辆违章查询</a>
-					</dd>
-				</dl>
-			</li>
-			<li class="layui-nav-item">
-				<a href="javascript:;">校园事务</a>
-				<dl class="layui-nav-child">
-					<dd>
-						<a href="">网上办理</a>
-					</dd>
-					<dd>
-						<a href="">网上咨询</a>
-					</dd>
-				</dl>
-			</li>
-			<li class="layui-nav-item">
-				<a href="">社区</a>
-			</li>
-			<li class="layui-nav-item" lay-unselect="" style="float: right;">
-				<a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img">登录</a>
-				<dl class="layui-nav-child">
-					<dd>
-						<a href="javascript:;">个人信息</a>
-					</dd>
-					<dd>
-						<a href="javascript:;">安全管理</a>
-					</dd>
-					<dd>
-						<a href="javascript:;">退出</a>
-					</dd>
-				</dl>
-			</li>
-		</ul>
+		<!--引入导航栏-->
+		<script type="text/javascript">
+			document.write(index.import.body.innerHTML);
+		</script>
+
+		<div class="layui-carousel" id="test10">
+			<div carousel-item="">
+				<div><img src="../images/myimage/轮播图3.jpg"></div>
+				<div><img src="../images/myimage/轮播图1.jpg"></div>
+				<div><img src="../images/myimage/轮播图2.jpg"></div>
+
+			</div>
+		</div>
 
 		<script src="../layui.js"></script>
-		<script type="text/javascript">
-			layui.use(['element'], function() {
 
+		<script>
+			layui.use(['carousel'], function() {
+				var carousel = layui.carousel
+				//图片轮播
+				carousel.render({
+					elem: '#test10',
+					width: '778px',
+					height: '440px',
+					interval: 5000
+				});
 			});
 		</script>
+
 	</body>
 
 </html>
